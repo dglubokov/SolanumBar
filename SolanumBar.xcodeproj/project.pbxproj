@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		3250557C2DCBCDE500A05D85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 325055652DCBCDE400A05D85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3250556C2DCBCDE400A05D85;
+			remoteInfo = SolanumBar;
+		};
+		325055862DCBCDE500A05D85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 325055652DCBCDE400A05D85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3250556C2DCBCDE400A05D85;
+			remoteInfo = SolanumBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3250556D2DCBCDE400A05D85 /* SolanumBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanumBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3250557B2DCBCDE500A05D85 /* SolanumBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanumBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		325055852DCBCDE500A05D85 /* SolanumBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanumBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3250559F2DCBD00800A05D85 /* Exceptions for "SolanumBar" folder in "SolanumBar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3250556C2DCBCDE400A05D85 /* SolanumBar */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3250556F2DCBCDE400A05D85 /* SolanumBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3250559F2DCBD00800A05D85 /* Exceptions for "SolanumBar" folder in "SolanumBar" target */,
+			);
+			path = SolanumBar;
+			sourceTree = "<group>";
+		};
+		3250557E2DCBCDE500A05D85 /* SolanumBarTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SolanumBarTests;
+			sourceTree = "<group>";
+		};
+		325055882DCBCDE500A05D85 /* SolanumBarUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SolanumBarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3250556A2DCBCDE400A05D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055782DCBCDE500A05D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055822DCBCDE500A05D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		325055642DCBCDE400A05D85 = {
+			isa = PBXGroup;
+			children = (
+				3250556F2DCBCDE400A05D85 /* SolanumBar */,
+				3250557E2DCBCDE500A05D85 /* SolanumBarTests */,
+				325055882DCBCDE500A05D85 /* SolanumBarUITests */,
+				3250556E2DCBCDE400A05D85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3250556E2DCBCDE400A05D85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3250556D2DCBCDE400A05D85 /* SolanumBar.app */,
+				3250557B2DCBCDE500A05D85 /* SolanumBarTests.xctest */,
+				325055852DCBCDE500A05D85 /* SolanumBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3250556C2DCBCDE400A05D85 /* SolanumBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3250558F2DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBar" */;
+			buildPhases = (
+				325055692DCBCDE400A05D85 /* Sources */,
+				3250556A2DCBCDE400A05D85 /* Frameworks */,
+				3250556B2DCBCDE400A05D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3250556F2DCBCDE400A05D85 /* SolanumBar */,
+			);
+			name = SolanumBar;
+			packageProductDependencies = (
+			);
+			productName = SolanumBar;
+			productReference = 3250556D2DCBCDE400A05D85 /* SolanumBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3250557A2DCBCDE500A05D85 /* SolanumBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325055922DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBarTests" */;
+			buildPhases = (
+				325055772DCBCDE500A05D85 /* Sources */,
+				325055782DCBCDE500A05D85 /* Frameworks */,
+				325055792DCBCDE500A05D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3250557D2DCBCDE500A05D85 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3250557E2DCBCDE500A05D85 /* SolanumBarTests */,
+			);
+			name = SolanumBarTests;
+			packageProductDependencies = (
+			);
+			productName = SolanumBarTests;
+			productReference = 3250557B2DCBCDE500A05D85 /* SolanumBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		325055842DCBCDE500A05D85 /* SolanumBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325055952DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBarUITests" */;
+			buildPhases = (
+				325055812DCBCDE500A05D85 /* Sources */,
+				325055822DCBCDE500A05D85 /* Frameworks */,
+				325055832DCBCDE500A05D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				325055872DCBCDE500A05D85 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				325055882DCBCDE500A05D85 /* SolanumBarUITests */,
+			);
+			name = SolanumBarUITests;
+			packageProductDependencies = (
+			);
+			productName = SolanumBarUITests;
+			productReference = 325055852DCBCDE500A05D85 /* SolanumBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		325055652DCBCDE400A05D85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					3250556C2DCBCDE400A05D85 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					3250557A2DCBCDE500A05D85 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3250556C2DCBCDE400A05D85;
+					};
+					325055842DCBCDE500A05D85 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3250556C2DCBCDE400A05D85;
+					};
+				};
+			};
+			buildConfigurationList = 325055682DCBCDE400A05D85 /* Build configuration list for PBXProject "SolanumBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 325055642DCBCDE400A05D85;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3250556E2DCBCDE400A05D85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3250556C2DCBCDE400A05D85 /* SolanumBar */,
+				3250557A2DCBCDE500A05D85 /* SolanumBarTests */,
+				325055842DCBCDE500A05D85 /* SolanumBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3250556B2DCBCDE400A05D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055792DCBCDE500A05D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055832DCBCDE500A05D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		325055692DCBCDE400A05D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055772DCBCDE500A05D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325055812DCBCDE500A05D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3250557D2DCBCDE500A05D85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3250556C2DCBCDE400A05D85 /* SolanumBar */;
+			targetProxy = 3250557C2DCBCDE500A05D85 /* PBXContainerItemProxy */;
+		};
+		325055872DCBCDE500A05D85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3250556C2DCBCDE400A05D85 /* SolanumBar */;
+			targetProxy = 325055862DCBCDE500A05D85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3250558D2DCBCDE500A05D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3250558E2DCBCDE500A05D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		325055902DCBCDE500A05D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SolanumBar/SolanumBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7N8LV7W6S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolanumBar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		325055912DCBCDE500A05D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SolanumBar/SolanumBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7N8LV7W6S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolanumBar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		325055932DCBCDE500A05D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanumBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolanumBar";
+			};
+			name = Debug;
+		};
+		325055942DCBCDE500A05D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanumBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolanumBar";
+			};
+			name = Release;
+		};
+		325055962DCBCDE500A05D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SolanumBar;
+			};
+			name = Debug;
+		};
+		325055972DCBCDE500A05D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SolanumBar.SolanumBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SolanumBar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		325055682DCBCDE400A05D85 /* Build configuration list for PBXProject "SolanumBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3250558D2DCBCDE500A05D85 /* Debug */,
+				3250558E2DCBCDE500A05D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3250558F2DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325055902DCBCDE500A05D85 /* Debug */,
+				325055912DCBCDE500A05D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325055922DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325055932DCBCDE500A05D85 /* Debug */,
+				325055942DCBCDE500A05D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325055952DCBCDE500A05D85 /* Build configuration list for PBXNativeTarget "SolanumBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325055962DCBCDE500A05D85 /* Debug */,
+				325055972DCBCDE500A05D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 325055652DCBCDE400A05D85 /* Project object */;
+}
