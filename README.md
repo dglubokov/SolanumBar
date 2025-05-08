@@ -14,7 +14,7 @@ SolanumBar is a simple, elegant Pomodoro timer that lives in your macOS menu bar
 ## Installation
 
 ### Option 1: Download the release
-1. Visit the [Releases](https://github.com/yourusername/SolanumBar/releases) page
+1. Visit the [Releases](https://github.com/dglubokov/SolanumBar/releases) page
 2. Download the latest `.dmg` file
 3. Open the `.dmg` and drag SolanumBar to your Applications folder
 4. Launch SolanumBar from your Applications folder
