@@ -3,12 +3,24 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var pomodoroTimer: PomodoroTimer
     @State private var workInput: String = ""
-    @State private var breakInput: String = ""
+    @State private var shortBreakInput: String = ""
+    @State private var longBreakInput: String = ""
 
     var body: some View {
         VStack(spacing: 15) {
             Text("Pomodoro Timer")
                 .font(.headline)
+
+            Picker("Session", selection: Binding(
+                get: { pomodoroTimer.currentMode },
+                set: { pomodoroTimer.setMode(to: $0) }
+            )) {
+                ForEach(TimerMode.allCases) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .pickerStyle(.menu)
+            .padding(.horizontal)
 
             Text(pomodoroTimer.timeLeftString)
                 .font(.system(size: 40, weight: .bold, design: .monospaced))
@@ -22,7 +34,7 @@ struct ContentView: View {
                         pomodoroTimer.startTimer()
                     }
                 }
-                .keyboardShortcut(.defaultAction) // Allows Enter key to trigger
+                .keyboardShortcut(.defaultAction)
 
                 Button("Reset") {
                     pomodoroTimer.resetTimer()
@@ -37,25 +49,36 @@ struct ContentView: View {
                 TextField("\(pomodoroTimer.workDurationMinutes)", text: $workInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 50)
-                    .onAppear { workInput = "\(pomodoroTimer.workDurationMinutes)" } // Initialize
+                    .onAppear { workInput = "\(pomodoroTimer.workDurationMinutes)" }
                     .onChange(of: workInput) { _, newValue in
                         if let newDuration = Int(newValue) {
                             pomodoroTimer.workDurationMinutes = newDuration
-                            // The didSet observer will handle updating durations
                         }
                     }
             }
 
             HStack {
-                Text("Break (min):")
-                TextField("\(pomodoroTimer.shortBreakDurationMinutes)", text: $breakInput)
+                Text("Short Break (min):")
+                TextField("\(pomodoroTimer.shortBreakDurationMinutes)", text: $shortBreakInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: 50)
-                    .onAppear { breakInput = "\(pomodoroTimer.shortBreakDurationMinutes)" } // Initialize
-                    .onChange(of: breakInput) { _, newValue in
+                    .onAppear { shortBreakInput = "\(pomodoroTimer.shortBreakDurationMinutes)" }
+                    .onChange(of: shortBreakInput) { _, newValue in
                         if let newDuration = Int(newValue) {
                             pomodoroTimer.shortBreakDurationMinutes = newDuration
-                            // The didSet observer will handle updating durations
+                        }
+                    }
+            }
+
+            HStack {
+                Text("Long Break (min):")
+                TextField("\(pomodoroTimer.longBreakDurationMinutes)", text: $longBreakInput)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 50)
+                    .onAppear { longBreakInput = "\(pomodoroTimer.longBreakDurationMinutes)" }
+                    .onChange(of: longBreakInput) { _, newValue in
+                        if let newDuration = Int(newValue) {
+                            pomodoroTimer.longBreakDurationMinutes = newDuration
                         }
                     }
             }
@@ -68,13 +91,14 @@ struct ContentView: View {
             .foregroundColor(.red)
         }
         .padding()
-        .frame(width: 250) // Adjust width as needed
+        .frame(width: 250)
+        .background(pomodoroTimer.backgroundColor)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(PomodoroTimer()) // For previewing
+            .environmentObject(PomodoroTimer())
     }
 }

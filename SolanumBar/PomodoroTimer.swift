@@ -2,25 +2,33 @@ import Foundation
 import UserNotifications
 import SwiftUI
 
-enum TimerMode {
-    case work
-    case shortBreak
+enum TimerMode: String, CaseIterable, Identifiable {
+    case work = "Work"
+    case shortBreak = "Short Break"
+    case longBreak = "Long Break"
+    
+    var id: String { self.rawValue }
 }
 
 class PomodoroTimer: ObservableObject {
-    // 1. @AppStorage properties must come first
+    // 1. @AppStorage properties
     @AppStorage("workDuration") var workDurationMinutes: Int = 25 {
         didSet { updateDurations() }
     }
     @AppStorage("shortBreakDuration") var shortBreakDurationMinutes: Int = 5 {
         didSet { updateDurations() }
     }
+    @AppStorage("longBreakDuration") var longBreakDurationMinutes: Int = 15 {
+        didSet { updateDurations() }
+    }
 
     // 2. Regular stored properties
+    private var workSessionCount: Int = 0 // Tracks completed work sessions
     private var currentDuration: Int {
         switch currentMode {
         case .work: return workDurationMinutes * 60
         case .shortBreak: return shortBreakDurationMinutes * 60
+        case .longBreak: return longBreakDurationMinutes * 60
         }
     }
 
@@ -31,6 +39,15 @@ class PomodoroTimer: ObservableObject {
     @Published var currentMode: TimerMode = .work
     @Published var menuBarTitle = "🍅"
     private var timer: Timer?
+    
+    // Computed property for background color
+    var backgroundColor: Color {
+        switch currentMode {
+        case .work: return .red.opacity(0.2)
+        case .shortBreak: return .green.opacity(0.2)
+        case .longBreak: return .blue.opacity(0.2)
+        }
+    }
 
     init() {
         // Initialize with default values first
@@ -71,7 +88,16 @@ class PomodoroTimer: ObservableObject {
         isRunning = false
         timeLeft = currentDuration
         updateTimeLeftString()
-        menuBarTitle = currentMode == .work ? "🍅" : "☕️"
+        switch currentMode {
+            case .work: menuBarTitle = "🍅"
+            case .shortBreak: menuBarTitle = "☕️"
+            case .longBreak: menuBarTitle = "🏖"
+        }
+    }
+    
+    func setMode(to mode: TimerMode) {
+        currentMode = mode
+        resetTimer()
     }
 
     private func updateDurations() {
@@ -89,7 +115,12 @@ class PomodoroTimer: ObservableObject {
     }
 
     private func updateMenuBarTitle() {
-        let symbol = currentMode == .work ? "🍅" : "☕️"
+        let symbol: String
+        switch currentMode {
+        case .work: symbol = "🍅"
+        case .shortBreak: symbol = "☕️"
+        case .longBreak: symbol = "🏖"
+        }
         menuBarTitle = "\(symbol) \(timeLeftString)"
     }
 
@@ -101,7 +132,17 @@ class PomodoroTimer: ObservableObject {
     }
 
     private func switchToNextMode() {
-        currentMode = currentMode == .work ? .shortBreak : .work
+        if currentMode == .work {
+            workSessionCount += 1
+            if workSessionCount >= 4 {
+                currentMode = .longBreak
+                workSessionCount = 0 // Reset after long break
+            } else {
+                currentMode = .shortBreak
+            }
+        } else {
+            currentMode = .work
+        }
         resetTimer()
     }
 
@@ -123,6 +164,9 @@ class PomodoroTimer: ObservableObject {
         case .shortBreak:
             content.title = "Back to Work!"
             content.body = "Your break is over"
+        case .longBreak:
+            content.title = "Back to Work!"
+            content.body = "Your long break is over"
         }
 
         let request = UNNotificationRequest(
