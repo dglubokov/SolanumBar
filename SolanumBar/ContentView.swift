@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var workInput: String = ""
     @State private var shortBreakInput: String = ""
     @State private var longBreakInput: String = ""
+    @State private var showCycleConfig: Bool = false
 
     var body: some View {
         VStack(spacing: 15) {
@@ -21,6 +22,13 @@ struct ContentView: View {
             }
             .pickerStyle(.menu)
             .padding(.horizontal)
+
+            // Cycle status display
+            if pomodoroTimer.currentMode == .work {
+                Text("Cycle: \(pomodoroTimer.currentCycle)/\(pomodoroTimer.cyclesBeforeLongBreak)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
 
             Text(pomodoroTimer.timeLeftString)
                 .font(.system(size: 40, weight: .bold, design: .monospaced))
@@ -81,6 +89,14 @@ struct ContentView: View {
                             pomodoroTimer.longBreakDurationMinutes = newDuration
                         }
                     }
+            }
+            
+            Button("Cycle Settings") {
+                showCycleConfig.toggle()
+            }
+            .sheet(isPresented: $showCycleConfig) {
+                CycleConfigurationView()
+                    .environmentObject(pomodoroTimer)
             }
 
             Divider().padding(.vertical, 5)

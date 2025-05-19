@@ -12,18 +12,23 @@ enum TimerMode: String, CaseIterable, Identifiable {
 
 class PomodoroTimer: ObservableObject {
     // 1. @AppStorage properties
-    @AppStorage("workDuration") var workDurationMinutes: Int = 25 {
+    @AppStorage("workDuration") var workDurationMinutes: Int = 45 {
         didSet { updateDurations() }
     }
-    @AppStorage("shortBreakDuration") var shortBreakDurationMinutes: Int = 5 {
+    @AppStorage("shortBreakDuration") var shortBreakDurationMinutes: Int = 10 {
         didSet { updateDurations() }
     }
-    @AppStorage("longBreakDuration") var longBreakDurationMinutes: Int = 15 {
+    @AppStorage("longBreakDuration") var longBreakDurationMinutes: Int = 30 {
         didSet { updateDurations() }
+    }
+    @AppStorage("cyclesBeforeLongBreak") var cyclesBeforeLongBreak: Int = 4 {
+        didSet { updateCycleSettings() }
+    }
+    @AppStorage("showCycleInMenuBar") var showCycleInMenuBar: Bool = true {
+        didSet { updateMenuBarTitle() }
     }
 
     // 2. Regular stored properties
-    private var workSessionCount: Int = 0 // Tracks completed work sessions
     private var currentDuration: Int {
         switch currentMode {
         case .work: return workDurationMinutes * 60
@@ -34,10 +39,12 @@ class PomodoroTimer: ObservableObject {
 
     // 3. @Published properties
     @Published var timeLeft: Int = 0
-    @Published var timeLeftString: String = "25:00"
+    @Published var timeLeftString: String = "45:00"
     @Published var isRunning = false
     @Published var currentMode: TimerMode = .work
     @Published var menuBarTitle = "🍅"
+    @Published var currentCycle: Int = 1
+    @Published var totalCyclesCompleted: Int = 0
     private var timer: Timer?
     
     // Computed property for background color
@@ -88,22 +95,32 @@ class PomodoroTimer: ObservableObject {
         isRunning = false
         timeLeft = currentDuration
         updateTimeLeftString()
-        switch currentMode {
-            case .work: menuBarTitle = "🍅"
-            case .shortBreak: menuBarTitle = "☕️"
-            case .longBreak: menuBarTitle = "🏖"
-        }
+        updateMenuBarTitle()
     }
     
     func setMode(to mode: TimerMode) {
         currentMode = mode
         resetTimer()
     }
+    
+    func resetCycles() {
+        currentCycle = 1
+        totalCyclesCompleted = 0
+        updateMenuBarTitle()
+    }
 
     private func updateDurations() {
         if !isRunning {
             resetTimer()
         }
+    }
+    
+    private func updateCycleSettings() {
+        // Ensure current cycle is valid with new settings
+        if currentCycle > cyclesBeforeLongBreak {
+            currentCycle = 1
+        }
+        updateMenuBarTitle()
     }
 
     private static func timeString(from seconds: Int) -> String {
@@ -121,7 +138,19 @@ class PomodoroTimer: ObservableObject {
         case .shortBreak: symbol = "☕️"
         case .longBreak: symbol = "🏖"
         }
-        menuBarTitle = "\(symbol) \(timeLeftString)"
+        
+        if isRunning && showCycleInMenuBar {
+            menuBarTitle = "\(symbol) \(timeLeftString) [\(currentCycle)/\(cyclesBeforeLongBreak)]"
+        } else if isRunning {
+            menuBarTitle = "\(symbol) \(timeLeftString)"
+        } else {
+            // Not running
+            switch currentMode {
+            case .work: menuBarTitle = "🍅"
+            case .shortBreak: menuBarTitle = "☕️"
+            case .longBreak: menuBarTitle = "🏖"
+            }
+        }
     }
 
     private func timerExpired() {
@@ -133,14 +162,19 @@ class PomodoroTimer: ObservableObject {
 
     private func switchToNextMode() {
         if currentMode == .work {
-            workSessionCount += 1
-            if workSessionCount >= 4 {
+            // Work session completed
+            if currentCycle >= cyclesBeforeLongBreak {
+                // Time for a long break
                 currentMode = .longBreak
-                workSessionCount = 0 // Reset after long break
+                totalCyclesCompleted += 1
+                currentCycle = 1
             } else {
+                // Short break
                 currentMode = .shortBreak
+                currentCycle += 1
             }
         } else {
+            // Break completed, back to work
             currentMode = .work
         }
         resetTimer()
@@ -159,14 +193,19 @@ class PomodoroTimer: ObservableObject {
 
         switch currentMode {
         case .work:
-            content.title = "Break Time!"
-            content.body = "Time to take a short break"
+            if currentCycle >= cyclesBeforeLongBreak {
+                content.title = "Long Break Time!"
+                content.body = "Well done! You've completed \(cyclesBeforeLongBreak) work cycles. Time for a long break!"
+            } else {
+                content.title = "Break Time!"
+                content.body = "Time to take a short break (Cycle \(currentCycle)/\(cyclesBeforeLongBreak))"
+            }
         case .shortBreak:
             content.title = "Back to Work!"
-            content.body = "Your break is over"
+            content.body = "Your break is over (Cycle \(currentCycle)/\(cyclesBeforeLongBreak))"
         case .longBreak:
             content.title = "Back to Work!"
-            content.body = "Your long break is over"
+            content.body = "Your long break is over. Starting a new set of cycles!"
         }
 
         let request = UNNotificationRequest(
