@@ -31,36 +31,8 @@ SolanumBar is a simple, elegant Pomodoro timer that lives in your macOS menu bar
 - Click on the tomato icon (🍅) in your menu bar to access the timer
 - Press "Start" to begin a work session
 - When the timer completes, you'll receive a notification
-- The timer automatically switches between work and break modes
 - Customize durations in the settings section
-
-## Roadmap
-
-### Short-term goals
-- Sound options for notifications
-- Long break feature after multiple work sessions
-
-### Long-term vision
-- **iPhone Integration**
-  - Synchronized timers across devices
-  - Widget support for iOS home screen
-  - Focused mode integration with iOS Focus
-
-- **Apple Watch Integration**
-  - Complications for watch face
-  - Haptic feedback for timer completion
-  - Quick timer start from watch
-
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- Customize number of cycles
 
 ## License
 
